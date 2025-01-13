@@ -30,7 +30,10 @@ export default function Header() {
 
   const handleLogin = () => {
     supabase.auth.signInWithOAuth({
-      provider: 'google'
+      provider: 'google',
+      options: {
+        redirectTo: `${window.location.origin}/`
+      }
     })
     .catch(err => {
       addNotification("Could not open Google Oauth Screen. Failed to login.", 'error')
