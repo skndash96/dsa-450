@@ -1,8 +1,10 @@
 import * as reactPlugin from 'vite-plugin-react'
-import type { UserConfig } from 'vite'
 
-const config: UserConfig = {
-  plugins: [reactPlugin]
+const config = {
+  plugins: [reactPlugin],
+  server: {
+    historyApiFallback: true
+  }
 }
 
 export default config
